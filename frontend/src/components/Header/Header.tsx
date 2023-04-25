@@ -1,10 +1,10 @@
-import styled from "styled-components";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { toggleTheme } from "../../app/ui/UISlice";
 import { Button } from "../UI/Button/Button";
 import { getThemeSelector } from "../../app/ui/UISelectors";
 import { ThemeEnum } from "../../interfaces/styled";
-import { getTransition } from "../../styles/utils";
+import { Burger } from "../UI/Burger/Burger";
+import * as S from "./styles";
 
 export const Header: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -15,37 +15,35 @@ export const Header: React.FC = () => {
   };
 
   return (
-    <SHeader>
-      <div>
-        <div>burger</div>
-      </div>
-      <Button
-        size={Button.size.xs}
-        variant={Button.variant.ghost}
-        color={Button.color.primary}
-        onClick={handleClickButtonTheme}
-      >
-        {theme.type === ThemeEnum.light ? "Ночь" : "День"}
-      </Button>
-      <div>
+    <S.Header>
+      <S.LeftDiv>
+        <Burger onClick={() => {}} size={Burger.size.sm} />
+        <Button
+          size={Button.size.xs}
+          variant={Button.variant.solid}
+          color={Button.color.primary}
+          onClick={handleClickButtonTheme}
+        >
+          Создать
+        </Button>
+      </S.LeftDiv>
+
+      <S.CenterDiv>
         <div>Search</div>
-      </div>
-      <div>
+      </S.CenterDiv>
+
+      <S.RightDiv>
+        <Button
+          size={Button.size.xs}
+          variant={Button.variant.ghost}
+          color={Button.color.primary}
+          onClick={handleClickButtonTheme}
+        >
+          {theme.type === ThemeEnum.light ? "Ночь" : "День"}
+        </Button>
+
         <div>User</div>
-      </div>
-    </SHeader>
+      </S.RightDiv>
+    </S.Header>
   );
 };
-
-const SHeader = styled.header`
-  box-sizing: border-box;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 10px;
-
-  background-color: ${({ theme }) => theme.colors.bg};
-  color: ${({ theme }) => theme.colors.font};
-
-  ${({ theme }) => getTransition(theme.durations.ms300)}
-`;

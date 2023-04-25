@@ -7,7 +7,7 @@ import {
   ButtonProps,
 } from "./Button.types";
 import { StyledVariants } from "../../../interfaces/styled";
-import { getTransition } from "../../../styles/utils";
+import { getCustomOutline, getTransition } from "../../../styles/utils";
 
 type SButtonProps = Required<ButtonProps>;
 
@@ -51,6 +51,8 @@ export const Button = styled.button<SButtonProps>`
         `;
     }
   }}
+
+  ${getCustomOutline()}
 `;
 
 const sizes: StyledVariants<ButtonSize> = {

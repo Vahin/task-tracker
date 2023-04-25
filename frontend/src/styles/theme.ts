@@ -3,13 +3,13 @@ import { ITheme, ThemeEnum } from "../interfaces/styled";
 
 export const baseTheme: ITheme = {
   colors: {
-    primary: "#A75DC7",
-    secondary: "#CF9A88",
+    primary: "#1761AB",
+    secondary: "#7DCCBD",
     success: "#4caf50",
     danger: "#f44336 ",
 
-    bg: "#F6F2F3",
-    font: "#343354",
+    bg: "#FAFFFF",
+    font: "#323232",
   },
 
   durations: {
@@ -23,8 +23,6 @@ export const lightTheme: DefaultTheme = {
 
   colors: {
     ...baseTheme.colors,
-    bg: "#F6F2F3",
-    font: "#343354",
   },
 };
 
@@ -34,7 +32,7 @@ export const darkTheme: DefaultTheme = {
 
   colors: {
     ...baseTheme.colors,
-    bg: "#343354",
-    font: "#F6F2F3",
+    bg: baseTheme.colors.font,
+    font: baseTheme.colors.bg,
   },
 };

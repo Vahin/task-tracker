@@ -1,5 +1,3 @@
-import { DefaultTheme } from "styled-components";
-
 export enum ButtonSize {
   xs = "xs",
   sm = "sm",
@@ -18,12 +16,14 @@ export enum ButtonColor {
   secondary = "secondary",
   success = "success",
   danger = "danger",
+
+  bg = "bg",
+  font = "font",
 }
 
 export interface ButtonProps {
   size?: ButtonSize;
   variant?: ButtonVariant;
   color?: ButtonColor;
-  theme?: DefaultTheme;
   onClick: () => void;
 }

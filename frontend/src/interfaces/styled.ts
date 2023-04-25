@@ -7,13 +7,7 @@ export enum ThemeEnum {
 
 export interface ITheme {
   colors: {
-    primary: string;
-    secondary: string;
-    success: string;
-    danger: string;
-
-    bg: string;
-    font: string;
+    [key in Colors]: string;
   };
 
   durations: {
@@ -24,3 +18,13 @@ export interface ITheme {
 export type StyledVariants<E extends string | number> = {
   [key in E]?: FlattenSimpleInterpolation;
 };
+
+export enum Colors {
+  primary = "primary",
+  secondary = "secondary",
+  success = "success",
+  danger = "danger",
+
+  bg = "bg",
+  font = "font",
+}

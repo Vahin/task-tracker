@@ -6,8 +6,6 @@ import {
   ButtonSize,
   ButtonVariant,
 } from "./Button.types";
-import { useAppSelector } from "../../../app/hooks";
-import { getThemeSelector } from "../../../app/ui/UISelectors";
 
 const ButtonComponent = ({
   children,
@@ -16,16 +14,8 @@ const ButtonComponent = ({
   color = ButtonColor.primary,
   onClick,
 }: PropsWithChildren<ButtonProps>) => {
-  const theme = useAppSelector(getThemeSelector);
-
   return (
-    <S.Button
-      size={size}
-      variant={variant}
-      color={color}
-      theme={theme}
-      onClick={onClick}
-    >
+    <S.Button size={size} variant={variant} color={color} onClick={onClick}>
       {children}
     </S.Button>
   );
