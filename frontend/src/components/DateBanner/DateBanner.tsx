@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { dateToString } from "./api";
 
 interface DateBannerProps {
-  date: Date;
+  date?: Date;
 }
 
 export const DateBanner: React.FC<DateBannerProps> = ({
@@ -16,5 +16,5 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
 
-  font-weight: 700;
+  font-weight: 500;
 `;

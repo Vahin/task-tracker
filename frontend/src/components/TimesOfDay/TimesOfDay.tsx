@@ -2,13 +2,13 @@ import styled from "styled-components";
 import { timeOfDayToString } from "./api";
 
 interface TimeOfDayProps {
-  time: Date;
-  username: string;
+  time?: Date;
+  username?: string;
 }
 
 export const TimeOfDay: React.FC<TimeOfDayProps> = ({
   time = new Date(),
-  username,
+  username = "Незнакомец",
 }) => {
   return (
     <Container>
