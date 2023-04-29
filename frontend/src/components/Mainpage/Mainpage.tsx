@@ -1,3 +1,4 @@
+import { CountOfCompletedTasks } from "../CountOfCompletedTasks/CountOfCompletedTasks";
 import { Greeting } from "../Greeting/Greeting";
 import * as S from "./styles";
 
@@ -6,7 +7,7 @@ export const Mainpage: React.FC = () => {
     <>
       <S.PageTitle>Главная</S.PageTitle>
       <Greeting />
-      <div>Месяц - неделя, задач выполнено, участников</div>
+      <CountOfCompletedTasks />
       <div>Мои задачи</div>
       <div>мои проекты</div>
     </>
