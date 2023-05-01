@@ -19,5 +19,5 @@ const Container = styled.div`
   border: 1px solid ${({ theme }) => theme.colors.font};
   border-radius: 999px;
 
-  padding: 10px 30px;
+  padding: 5px 20px;
 `;

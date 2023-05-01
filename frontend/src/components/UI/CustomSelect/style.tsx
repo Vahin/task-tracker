@@ -7,7 +7,8 @@ export const prefix: string = "react-select";
 export const StyledSelect = styled(Select)`
   & .${prefix}__control {
     background-color: ${({ theme }) => theme.colors.bg};
-    border-color: ${({ theme }) => theme.colors.font};
+    border: none;
+
     ${({ theme }) =>
       getTransition(theme.durations.ms300, [
         "color",
@@ -22,9 +23,21 @@ export const StyledSelect = styled(Select)`
     box-shadow: none;
   }
 
+  & .${prefix}__value-container {
+    padding: 0;
+  }
+
   & .${prefix}__single-value {
     color: ${({ theme }) => theme.colors.font};
     ${({ theme }) => getTransition(theme.durations.ms300)}
+  }
+
+  & .${prefix}__indicator-separator {
+    display: none;
+  }
+
+  & .${prefix}__indicator {
+    padding: 2px;
   }
 
   & .${prefix}__menu-list {
