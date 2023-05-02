@@ -19,16 +19,15 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
-# Application definition
-
 INSTALLED_APPS = [
-    'tasks.apps.TasksConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'tasks.apps.TasksConfig',
+    'core.apps.CoreConfig',
 ]
 
 MIDDLEWARE = [
@@ -115,3 +114,16 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+ADMIN_TEXT_LENGHT = 50
+
+TASK_STATUS_CHOICES = (
+    ('not_completed', 'Не выполнено'),
+    ('completed', 'Выполнено'),
+    ('overdue', 'Просрочено'),
+    ('assigned', 'Назначено'),
+)
+PROJECT_STATUS_CHOICES = (
+        ('active', 'Активный'),
+        ('completed', 'Завершенный'),
+    )
